@@ -1,13 +1,13 @@
-import Logo from "@c/Logo";
-import MenuButton from "@c/MenuButton";
-import SearchBar from "@c/SearchBar";
+import Logo from '@c/Logo';
+import MenuButton from '@c/MenuButton';
+import SearchBar from '@c/SearchBar';
 
 export default function Heading() {
   return (
-    <header className="flex flex-row">
+    <header className="flex flex-row gap-10 items-center">
       <Logo />
-      <SearchBar/>
-      <MenuButton/>
+      <SearchBar />
+      <MenuButton />
     </header>
-  )
+  );
 }
