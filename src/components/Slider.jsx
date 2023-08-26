@@ -13,8 +13,6 @@ export default function Slider() {
   const [bgColor, setBgColor] = useState(null);
   const [random, setRandom] = useState(1);
 
-  const arr = [1, 2, 3, 4, 5, 6];
-
   useLayoutEffect(() => {
     const handleRandomBackground = () => {
       setRandom(Number(parseInt(Math.random() * 6) + 1));
@@ -49,12 +47,12 @@ export default function Slider() {
             >
               <Link to={`/character/${item.id}`}>
                 <div
-                  className={`relative p-6 rounded-2xl w-72 m-auto flex flex-col gap-3 ${bgColor}`}
+                  className={`relative p-7 rounded-2xl w-72 m-auto flex flex-col gap-3 bg-grad1`}
                 >
                   <h2 className="text-4xl">{item.name}</h2>
-                  <h3>{item.nickname}</h3>
+                  <h3 className="text-2xl">{item.nickname}</h3>
                   <img
-                    className={`absolute left-1/2 top-6 -translate-x-1/2 -translate-y-full h-40`}
+                    className={`absolute left-1/2 top-4 -translate-x-1/2 -translate-y-full h-40`}
                     src={getPbImageURL(item, 'image')}
                     alt={item.name}
                   />
