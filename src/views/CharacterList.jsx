@@ -1,7 +1,7 @@
-import Spinner from "@/components/Spinner";
-import useDataList from "@/hooks/useDataList";
-import { getPbImageURL } from "@/utils/getImageURL";
-import { Link } from "react-router-dom";
+import Spinner from '@/components/Spinner';
+import useDataList from '@/hooks/useDataList';
+import { getPbImageURL } from '@/utils/getImageURL';
+import { Link } from 'react-router-dom';
 
 export default function CharacterList() {
   const { isLoading, data } = useDataList();
@@ -9,7 +9,7 @@ export default function CharacterList() {
   if (isLoading) {
     return <Spinner size={160} />;
   }
-console.log(data);
+
   if (data) {
     return (
       <>
@@ -20,7 +20,11 @@ console.log(data);
               <li key={item.id} className="justify-self-center">
                 <Link to={`/character/${item.id}`}>
                   <figure>
-                    <img className="h-[160px] object-cover mx-auto" src={getPbImageURL(item, "image")} alt="" />
+                    <img
+                      className="h-[160px] object-cover mx-auto"
+                      src={getPbImageURL(item, 'image')}
+                      alt=""
+                    />
                     <figcaption className="flex flex-col gap-1 items-center mt-2">
                       <span>
                         {item.name}({item.nickname})
