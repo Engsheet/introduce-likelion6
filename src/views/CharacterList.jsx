@@ -13,7 +13,7 @@ export default function CharacterList() {
   if (data) {
     return (
       <>
-        <div>
+        <div className="">
           <h1 className="text-indigo-950 text-2xl mb-5">Characters</h1>
           <ul className="grid grid-cols-3">
             {data.items.map((item) => (

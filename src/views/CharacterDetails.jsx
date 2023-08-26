@@ -33,21 +33,23 @@ export default function CharacterDetails() {
 
   if (data) {
     return (
-      <>
+      <div className="w-full h-[calc(100vh-27px)] relative">
         <Helmet>
           <title>Like Lion FE 6th - {data.name}</title>
         </Helmet>
-        <div className="flex bg-gradient-to-tr from-orange-500 to-white text-white rounded-tl-3xl w-4/5 h-[500px]">
-          <img className="h-[160px] object-cover mx-auto" src={getPbImageURL(data, "image")} alt="" />
-          <div>
-            <dl className="flex flex-col mt-5">
-              <dt className="text-3xl font-bold">{data.name}</dt>
-              <dd>{data.nickname}</dd>
-              <dd>{data.details}</dd>
-            </dl>
-          </div>
+        <div className="absolute bottom-0 right-0 flex basis-auto bg-gradient-to-tr from-orange-500 from-40%  to-red-300 text-white rounded-tl-3xl w-3/4 h-2/3">
+          <img
+            className="relative w-1/2 pl-6 pr-6 object-contain bottom-1/4 mx-auto"
+            src={getPbImageURL(data, "image")}
+            alt=""
+          />
+          <dl className="w-1/2 pl-4 pr-8 mt-5 flex flex-col gap-4">
+            <dt className="text-5xl font-bold text-amber-100">{data.name}</dt>
+            <dd className="ml-1 text-2xl font-semibold">{data.nickname}</dd>
+            <dd className="ml-1 mt-6 text-base font-light">{data.details}</dd>
+          </dl>
         </div>
-      </>
+      </div>
     );
   }
 }
