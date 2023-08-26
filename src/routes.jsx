@@ -1,12 +1,14 @@
 import { Route, createBrowserRouter, createRoutesFromElements } from "react-router-dom";
+import RootLayout from "./layout/RootLayout";
+import CharacterList from "./views/CharacterList";
+import CharacterDetails from "./views/CharacterDetails";
 
 const router = createBrowserRouter(
-  // 유틸리티 함수
   createRoutesFromElements(
-    // <Route path="/" element={<RootLayout />}>
-    //   <Route index element={<Home />} />
-    //   <Route path="signin" element={<SignIn />} />
-    // </Route>
+    <Route path="/" element={<RootLayout displaySideMenu={true} />}>
+      <Route index element={<CharacterList />} />
+      <Route path="character/:dataId" element={<CharacterDetails />}></Route>
+    </Route>
   )
 );
 
