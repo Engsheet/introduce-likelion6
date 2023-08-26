@@ -4,7 +4,7 @@ import SearchBar from '@c/SearchBar';
 
 export default function Heading() {
   return (
-    <header className="flex flex-row gap-10 items-center">
+    <header className="flex flex-row gap-10 items-center justify-between mb-8">
       <Logo />
       <SearchBar />
       <MenuButton />

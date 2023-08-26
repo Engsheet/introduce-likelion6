@@ -4,8 +4,8 @@ export default {
   theme: {
     extend: {},
     backgroundImage: {
-      menu: "url('src/assets/menu.svg')",
-      search: "url('src/assets/search.svg')"
+      add: "url('src/assets/add.svg')",
+      search: "url('src/assets/search.svg')",
     },
   },
   plugins: [],
