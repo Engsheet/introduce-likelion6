@@ -1,14 +1,15 @@
-import Heading from "@l/Heading";
-import IntroduceList from "./layout/IntroduceList";
-import CharacterDetails from "./views/CharacterDetails";
+import { HelmetProvider } from "react-helmet-async";
+import { RouterProvider } from "react-router-dom";
+import router from "./routes";
 
 function App() {
   return (
     <>
-      <div>
-        <Heading />
-        <CharacterDetails/>
-      </div>
+      <HelmetProvider>
+        <div>
+          <RouterProvider router={router} />
+        </div>
+      </HelmetProvider>
     </>
   );
 }

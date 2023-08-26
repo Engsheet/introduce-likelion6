@@ -8,6 +8,7 @@ function Spinner(
 ) {
   return (
     <svg
+      className="mx-auto my-48"
       width={size}
       height={size}
       viewBox="0 0 100 100"
