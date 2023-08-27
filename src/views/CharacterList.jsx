@@ -14,7 +14,6 @@ export default function CharacterList() {
 
   function setColor(index) {
     const colorIndex = index % 6;
-
     return arr[colorIndex];
   }
 
@@ -48,7 +47,7 @@ export default function CharacterList() {
                   <h2 className="text-3xl font-bold">{item.name}</h2>
                   <h3 className="text-xl font-semibold">{item.nickname}</h3>
                   <img
-                    className={`absolute left-1/2 top-4 -translate-x-1/2 -translate-y-full h-40 px-3`}
+                    className={`absolute left-1/2 top-4 -translate-x-1/2 -translate-y-full h-40`}
                     src={getPbImageURL(item, "image")}
                     alt={item.name}
                   />

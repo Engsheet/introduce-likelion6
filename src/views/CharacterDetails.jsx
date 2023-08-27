@@ -1,10 +1,10 @@
-import Spinner from '@/components/Spinner';
-import useDataDetails from '@/hooks/useDataDetails';
-import { getPbImageURL } from '@/utils/getImageURL';
-import { useState } from 'react';
-import { useEffect } from 'react';
-import { Helmet } from 'react-helmet-async';
-import { useParams } from 'react-router-dom';
+import Spinner from "@/components/Spinner";
+import useDataDetails from "@/hooks/useDataDetails";
+import useDataList from "@/hooks/useDataList";
+import { getPbImageURL } from "@/utils/getImageURL";
+import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
+import { useParams } from "react-router-dom";
 
 export default function CharacterDetails() {
   const { dataId } = useParams();
@@ -12,11 +12,11 @@ export default function CharacterDetails() {
 
   /* -------------------------------------------------------------------------- */
 
-  const [dataForm, setDataForm] = useState(null);
+  const [, setData] = useState(null);
 
   useEffect(() => {
     if (!isLoading && data) {
-      setDataForm({
+      setData({
         name: data.name,
         nickname: data.price,
         details: data.details,
@@ -27,29 +27,32 @@ export default function CharacterDetails() {
 
   /* -------------------------------------------------------------------------- */
 
+  //
   if (isLoading) {
     return <Spinner size={120} />;
   }
 
+  // ${setColor(dataForm.items.findIndex(item => { item.id == dataId; }))}
   if (data) {
     return (
-      <div className="w-full h-[calc(100vh-27px)] relative">
+      <div className="w-full relative h-[50vh] rounded-3xl overflow-hidden">
         <Helmet>
           <title>Like Lion FE 6th - {data.name}</title>
         </Helmet>
-        <div className="bottom-0 right-0 flex basis-auto text-white rounded-tl-3xl w-3/4 h-2/3">
-          <img
-            className="relative w-1/2 pl-6 pr-6 object-contain bottom-1/4 mx-auto"
-            src={getPbImageURL(data, 'image')}
-            alt=""
-          />
-          <dl className="w-1/2 pl-4 pr-8 mt-5 flex flex-col gap-4">
-            <dt className="text-5xl font-bold text-amber-100">{data.name}</dt>
+        <img
+          className="absolute inline-block w-[45%] mx-8 px-6 py-6 z-50"
+          src={getPbImageURL(data, "image")}
+          alt=""
+        />
+        <div className="absolute bottom-0 right-0 flex justify-end rounded-tl-3xl w-2/3 h-2/3 bg-grad-details z-0">
+          <dl className="w-3/4 pl-4 pr-8 mt-12 flex flex-col gap-4">
+            <dt className="text-5xl font-bold">{data.name}</dt>
             <dd className="ml-1 text-2xl font-semibold">{data.nickname}</dd>
             <dd className="ml-1 mt-6 text-base font-light">{data.details}</dd>
           </dl>
         </div>
       </div>
+
     );
   }
 }
