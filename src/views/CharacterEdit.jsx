@@ -82,7 +82,8 @@ export default function CharacterEdit() {
           {/* <p className="absolute top-1/2 left-[38%] border-2 border-[#ffcc99] w-56"></p> */}
           <div className="relative w-full h-24">
             <h2 className="absolute -top-5 left-1/2 -translate-x-1/2 text-3xl mb-10 flex flex-col bg-white px-5">
-              정보 수정<span className="text-xl pl-7">{formState.name}</span>
+              정보 수정
+              <span className="text-xl block m-auto">{formState.name}</span>
             </h2>
             <p className="border-2 border-[#ffcc99] m-auto w-80"></p>
           </div>
