@@ -1,13 +1,10 @@
-import {
-  Route,
-  createBrowserRouter,
-  createRoutesFromElements,
-} from 'react-router-dom';
-import CharacterList from './views/CharacterList';
-import AddList from './layout/AddList';
-import RootLayout from './layout/RootLayout';
-import CharacterDetails from './views/CharacterDetails';
-import Home from './views/Home';
+import { Route, createBrowserRouter, createRoutesFromElements } from "react-router-dom";
+import CharacterList from "./views/CharacterList";
+import AddList from "./layout/AddList";
+import RootLayout from "./layout/RootLayout";
+import CharacterDetails from "./views/CharacterDetails";
+import Home from "./views/Home";
+import CharacterEdit from "./views/CharacterEdit";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -15,6 +12,7 @@ const router = createBrowserRouter(
       <Route index element={<Home />} />
       <Route path="introduce" element={<CharacterList />} />
       <Route path="character/:dataId" element={<CharacterDetails />}></Route>
+      <Route path="character/edit/:dataId" element={<CharacterEdit />}></Route>
       <Route path="addList" element={<AddList />} />
     </Route>
   )
