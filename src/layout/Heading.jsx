@@ -1,33 +1,23 @@
-import AddButton from '@/components/AddButton';
+import MenuBar from '@/components/MenuBar';
 import Logo from '@c/Logo';
-import SearchBar from '@c/SearchBar';
-import useDataList from '@/hooks/useDataList';
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import add from '../assets/add.svg';
+import search from '../assets/search.svg';
 
 export default function Heading() {
-  const { data } = useDataList();
-  const [search, setSearch] = useState('');
-
-  if (data) {
-    const aa = data.items.map((item) => {
-      if (item.name === search) {
-        console.log(item.name);
-      }
-    });
-  }
-
-  const getValue = (e) => {
-    setSearch(e.target.value);
-  };
-
   return (
-    <header className="flex flex-row gap-10 items-center justify-between my-16 mx-4">
+    <header>
       <Link to="/">
         <Logo />
       </Link>
-      <SearchBar onChange={getValue} />
-      <AddButton />
+      <div className="flex flex-row gap-10 items-center justify-between my-6">
+        <MenuBar link="/introduce" imgsrc={search}>
+          구경하기
+        </MenuBar>
+        <MenuBar link="/addList" imgsrc={add}>
+          추가하기
+        </MenuBar>
+      </div>
     </header>
   );
 }
