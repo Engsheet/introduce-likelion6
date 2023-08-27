@@ -6,7 +6,7 @@ function SwiperButton({ swiperName, children }) {
   return (
     <button
       type="button"
-      className={`text-xl hover:font-semibold ${swiperName} disabled:text-white`}
+      className={`text-xl hover:font-semibold ${swiperName} disabled:text-gray-200`}
     >
       {children}
     </button>
