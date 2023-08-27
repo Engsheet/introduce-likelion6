@@ -4,10 +4,12 @@ import { useRef, useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import Spinner from '../components/Spinner';
+import { useNavigate } from 'react-router-dom';
 
 export default function AddList() {
   const [loading, setLoading] = useState(false);
   const pb = new PocketBase('https://characters-db.pockethost.io');
+  const navigate = useNavigate();
 
   const nameRef = useRef(null);
   const nickNameRef = useRef(null);
@@ -37,7 +39,7 @@ export default function AddList() {
       });
 
       setTimeout(() => {
-        window.location.href = '/introduce';
+        navigate('/introduce');
       }, 1000);
     } catch (error) {
       console.error(error);
