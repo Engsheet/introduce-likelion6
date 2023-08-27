@@ -56,7 +56,7 @@ export default function CharacterList() {
             >
               <Link to={`/character/${item.id}`}>
                 <div
-                  className={`relative p-7 rounded-2xl m-auto flex flex-col gap-3 ${setColor(
+                  className={`hover:-translate-y-6 duration-300 relative p-7 rounded-2xl m-auto flex flex-col gap-3 ${setColor(
                     index
                   )}`}
                 >
