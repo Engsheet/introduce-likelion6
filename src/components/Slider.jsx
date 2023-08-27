@@ -6,9 +6,10 @@ import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperButton from './SwiperButton';
+import Spinner from './Spinner';
 
 export default function Slider() {
-  const { data } = useDataList();
+  const { data, isLoading } = useDataList();
 
   const arr = [
     'bg-grad1',
@@ -19,10 +20,10 @@ export default function Slider() {
     'bg-grad6',
   ];
 
-  function setColor(index) {
-    const colorIndex = index % 6;
+  function randomColor() {
+    const random = Math.round(Math.random() * 5);
 
-    return arr[colorIndex];
+    return arr[random];
   }
 
   if (data) {
@@ -43,7 +44,7 @@ export default function Slider() {
             borderRadius: '30px',
           }}
         >
-          {data.items.map((item, index) => (
+          {data.items.map((item) => (
             <SwiperSlide
               key={item.id}
               style={{
@@ -52,7 +53,7 @@ export default function Slider() {
             >
               <Link to={`/character/${item.id}`}>
                 <div
-                  className={`relative p-7 rounded-2xl m-auto flex flex-col gap-3 ${setColor(index)}`}
+                  className={`relative p-7 rounded-2xl m-auto flex flex-col gap-3 ${randomColor()}`}
                 >
                   <h2 className="text-3xl font-bold">{item.name}</h2>
                   <h3 className="text-xl font-semibold">{item.nickname}</h3>

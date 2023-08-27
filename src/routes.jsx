@@ -4,7 +4,7 @@ import {
   createRoutesFromElements,
 } from 'react-router-dom';
 import Slider from './components/Slider';
-import AddList from './layout/AddList';
+import AddList from './components/AddList';
 import RootLayout from './layout/RootLayout';
 import CharacterDetails from './views/CharacterDetails';
 import Home from './layout/Home';
