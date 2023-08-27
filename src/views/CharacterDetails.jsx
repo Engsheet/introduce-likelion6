@@ -37,7 +37,7 @@ export default function CharacterDetails() {
         <Helmet>
           <title>Like Lion FE 6th - {data.name}</title>
         </Helmet>
-        <div className="bottom-0 right-0 flex basis-auto bg-gradient-to-tr from-orange-500 from-40% to-red-300 text-white rounded-tl-3xl w-3/4 h-2/3">
+        <div className="bottom-0 right-0 flex basis-auto text-white rounded-tl-3xl w-3/4 h-2/3">
           <img
             className="relative w-1/2 pl-6 pr-6 object-contain bottom-1/4 mx-auto"
             src={getPbImageURL(data, 'image')}
