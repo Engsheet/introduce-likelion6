@@ -34,8 +34,13 @@ export default function Slider() {
           slidesPerGroup={3}
           modules={[Navigation]}
           navigation={{
-            nextEl: ".custom-next",
-            prevEl: ".custom-prev",
+            nextEl: '.custom-next',
+            prevEl: '.custom-prev',
+          }}
+          style={{
+            border: '1px solid 	#DCDCDC',
+            padding: '60px',
+            borderRadius: '30px',
           }}
         >
           {data.items.map((item) => (
@@ -53,7 +58,7 @@ export default function Slider() {
                   <h3 className="text-xl font-semibold">{item.nickname}</h3>
                   <img
                     className={`absolute left-1/2 top-4 -translate-x-1/2 -translate-y-full h-40 px-3`}
-                    src={getPbImageURL(item, "image")}
+                    src={getPbImageURL(item, 'image')}
                     alt={item.name}
                   />
                 </div>
@@ -62,7 +67,9 @@ export default function Slider() {
           ))}
         </Swiper>
         <div className="text-center mt-8">
-          <SwiperButton swiperName="custom-prev mr-20">&#8249; Prev</SwiperButton>
+          <SwiperButton swiperName="custom-prev mr-20">
+            &#8249; Prev
+          </SwiperButton>
           <SwiperButton swiperName="custom-next">Next &#8250;</SwiperButton>
         </div>
       </>
