@@ -1,17 +1,17 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./index.html', './src/**/*.jsx'],
+  content: ["./index.html", "./src/**/*.jsx"],
   theme: {
     extend: {},
     backgroundImage: {
       add: "url('src/assets/add.svg')",
       search: "url('src/assets/search.svg')",
-      grad1: 'linear-gradient(90deg, rgb(255, 199, 228), rgb(255, 195, 173))',
-      grad2: 'linear-gradient(90deg, rgb(207, 199, 255), rgb(179, 254, 255))',
-      grad3: 'linear-gradient(135deg, #82fafc 0%, #043c84 100%)',
-      grad4: 'linear-gradient(135deg, #fed1d8 0%, #eec3fd 100%)',
-      grad5: 'linear-gradient(135deg, #c7fecf 0%, #bd91fc 100%)',
-      grad6: 'linear-gradient(135deg, #fa9db1 0%, #c2bdfe 100%)',
+      grad1: "linear-gradient(to right bottom, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%)",
+      grad2: "linear-gradient(to right bottom, #ffecd2 0%, #fcb69f 100%)",
+      grad3: "linear-gradient(to right bottom, rgb(255, 252, 179), rgb(255, 205, 199))",
+      grad4: "linear-gradient(to right bottom, #fddb92 0%, #d1fdff 100%)",
+      grad5: "linear-gradient(to right bottom, #E3FDF5 0%, #FFE6FA 100%)",
+      grad6: "linear-gradient(to right bottom, #fef9d7 0%, #d299c2 100%)",
     },
   },
   plugins: [],
