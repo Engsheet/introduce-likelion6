@@ -1,7 +1,8 @@
 # 리액트 3주차 과제_미니 React 애플리케이션만들기
 
 ## 배포 주소
-[LikeLion FE 6th](https://likelion-frontend-6th.netlify.app/)
+[Netlify 배포](https://likelion-frontend-6th.netlify.app/)
+[Vercel 배포](https://likelion-fe6th.vercel.app/) 
 
 
 ## 목차
