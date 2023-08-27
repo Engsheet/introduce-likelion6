@@ -37,7 +37,7 @@ export default function AddList() {
       });
 
       setTimeout(() => {
-        location.href = '/introduce';
+        window.location.href = '/introduce';
       }, 1000);
     } catch (error) {
       console.error(error);
