@@ -1,5 +1,6 @@
 # 리액트 3주차 과제_미니 React 애플리케이션만들기
 
+## 배포 주소
 [LikeLion FE 6th](https://likelion-frontend-6th.netlify.app/)
 
 
@@ -67,7 +68,7 @@ introduce-likelion6
 <br/>
 
 ### 🐈‍⬛ 김규민  
-<b>담당한 부분 : 환경 구성, 리스트 렌더링, 상세 페이지 렌더링, (수정 및 삭제 페이지 - 미완)</b>
+<b>담당한 부분 : 환경 구성, 라우터 구성, 리스트 렌더링, 상세 페이지 렌더링, (수정 및 삭제 페이지 - 미완)</b>
 
 
 1. CharacterDetails.jsx - CharacterList 의 ```background-color``` 속성을 Context 를 활용하려 했으나 코드 작성에 어려움이 있었습니다.  
@@ -75,3 +76,12 @@ introduce-likelion6
 - 현재는 고정된 색으로 표시되는 상태  
 2. CharacterEdit.jsx - 수정 및 삭제 페이지 코드 작성 중... 만들고 나서 모달창으로 리팩토링 고려중입니다.  
 ![](https://cdn.discordapp.com/attachments/1116991754281947197/1145365314306064454/d57d83ede883faea.PNG)
+
+
+## 추가하고싶은 부분
+
+1. 데이터 수정, 제거
+2. 검색
+3. 데이터 추가, 수정페이지 모달창으로 만들어보기
+4. 애니메이션
+
