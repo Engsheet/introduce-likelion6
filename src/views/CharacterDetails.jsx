@@ -1,10 +1,10 @@
-import Spinner from "@/components/Spinner";
-import useDataDetails from "@/hooks/useDataDetails";
-import { getPbImageURL } from "@/utils/getImageURL";
-import { useState } from "react";
-import { useEffect } from "react";
-import { Helmet } from "react-helmet-async";
-import { useParams } from "react-router-dom";
+import Spinner from '@/components/Spinner';
+import useDataDetails from '@/hooks/useDataDetails';
+import { getPbImageURL } from '@/utils/getImageURL';
+import { useState } from 'react';
+import { useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
+import { useParams } from 'react-router-dom';
 
 export default function CharacterDetails() {
   const { dataId } = useParams();
@@ -37,10 +37,10 @@ export default function CharacterDetails() {
         <Helmet>
           <title>Like Lion FE 6th - {data.name}</title>
         </Helmet>
-        <div className="absolute bottom-0 right-0 flex basis-auto bg-gradient-to-tr from-orange-500 from-40%  to-red-300 text-white rounded-tl-3xl w-3/4 h-2/3">
+        <div className="bottom-0 right-0 flex basis-auto bg-gradient-to-tr from-orange-500 from-40% to-red-300 text-white rounded-tl-3xl w-3/4 h-2/3">
           <img
             className="relative w-1/2 pl-6 pr-6 object-contain bottom-1/4 mx-auto"
-            src={getPbImageURL(data, "image")}
+            src={getPbImageURL(data, 'image')}
             alt=""
           />
           <dl className="w-1/2 pl-4 pr-8 mt-5 flex flex-col gap-4">

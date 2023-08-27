@@ -6,9 +6,7 @@ function App() {
   return (
     <>
       <HelmetProvider>
-        <div className="max-w-[1024px] h-fit transform translate-x-1/2 -translate-y-1/2 absolute top-1/2 ">
           <RouterProvider router={router} />
-        </div>
       </HelmetProvider>
     </>
   );
