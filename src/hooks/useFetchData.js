@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 const defaultOptions = {
-  method: "GET",
+  method: 'GET',
 };
 
 export default function useFetchData(endpoint, options = {}) {

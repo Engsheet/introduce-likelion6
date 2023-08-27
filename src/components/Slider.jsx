@@ -1,6 +1,5 @@
 import useDataList from '@/hooks/useDataList';
 import { getPbImageURL } from '@/utils/getImageURL';
-import { useLayoutEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -10,19 +9,21 @@ import SwiperButton from './SwiperButton';
 
 export default function Slider() {
   const { data } = useDataList();
-  const [bgColor, setBgColor] = useState(null);
-  const [random, setRandom] = useState(1);
 
-  useLayoutEffect(() => {
-    const handleRandomBackground = () => {
-      setRandom(Number(parseInt(Math.random() * 6) + 1));
+  const arr = [
+    'bg-grad1',
+    'bg-grad2',
+    'bg-grad3',
+    'bg-grad4',
+    'bg-grad5',
+    'bg-grad6',
+  ];
 
-      return `bg-grad${random}`;
-    };
+  function randomColor() {
+    const random = Math.round(Math.random() * 5);
 
-    const randomBg = handleRandomBackground();
-    setBgColor(randomBg);
-  }, []);
+    return arr[random];
+  }
 
   if (data) {
     return (
@@ -41,13 +42,12 @@ export default function Slider() {
             <SwiperSlide
               key={item.id}
               style={{
-                height: '300px',
                 paddingTop: '150px',
               }}
             >
               <Link to={`/character/${item.id}`}>
                 <div
-                  className={`relative p-7 rounded-2xl w-72 m-auto flex flex-col gap-3 bg-grad1`}
+                  className={`relative p-7 rounded-2xl w-72 m-auto flex flex-col gap-3 ${randomColor()}`}
                 >
                   <h2 className="text-4xl">{item.name}</h2>
                   <h3 className="text-2xl">{item.nickname}</h3>
