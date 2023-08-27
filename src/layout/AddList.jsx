@@ -5,6 +5,7 @@ import { toast } from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import Spinner from '../components/Spinner';
 import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 export default function AddList() {
   const [loading, setLoading] = useState(false);
@@ -56,6 +57,9 @@ export default function AddList() {
 
   return (
     <div className="border p-10 border-gray-200 rounded-3xl text-xl">
+      <Helmet>
+        <title>Like Lion FE 6th - 추가</title>
+      </Helmet>
       {loading ? (
         <Spinner />
       ) : (

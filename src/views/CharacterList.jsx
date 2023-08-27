@@ -7,6 +7,7 @@ import { Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperButton from '../components/SwiperButton';
 import Spinner from '@/components/Spinner';
+import { Helmet } from 'react-helmet-async';
 
 export default function CharacterList() {
   const { data, isLoading } = useDataList();
@@ -32,6 +33,9 @@ export default function CharacterList() {
   if (data) {
     return (
       <>
+        <Helmet>
+          <title>Like Lion FE 6th - 소개</title>
+        </Helmet>
         <Swiper
           spaceBetween={50}
           slidesPerView={3}
