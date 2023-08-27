@@ -1,10 +1,9 @@
-import Spinner from "@/components/Spinner";
-import useDataDetails from "@/hooks/useDataDetails";
-import useDataList from "@/hooks/useDataList";
-import { getPbImageURL } from "@/utils/getImageURL";
-import { useEffect, useState } from "react";
-import { Helmet } from "react-helmet-async";
-import { useParams } from "react-router-dom";
+import Spinner from '@/components/Spinner';
+import useDataDetails from '@/hooks/useDataDetails';
+import { getPbImageURL } from '@/utils/getImageURL';
+import { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
+import { useParams } from 'react-router-dom';
 
 export default function CharacterDetails() {
   const { dataId } = useParams();
@@ -41,7 +40,7 @@ export default function CharacterDetails() {
         </Helmet>
         <img
           className="absolute inline-block w-[45%] mx-8 px-6 py-6 z-50"
-          src={getPbImageURL(data, "image")}
+          src={getPbImageURL(data, 'image')}
           alt=""
         />
         <div className="absolute bottom-0 right-0 flex justify-end rounded-tl-3xl w-2/3 h-2/3 bg-grad-details z-0">
@@ -52,7 +51,6 @@ export default function CharacterDetails() {
           </dl>
         </div>
       </div>
-
     );
   }
 }
