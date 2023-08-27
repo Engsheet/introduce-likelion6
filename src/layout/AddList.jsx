@@ -3,7 +3,7 @@ import PocketBase from 'pocketbase';
 import { useRef, useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { Link } from 'react-router-dom';
-import Spinner from './Spinner';
+import Spinner from '../components/Spinner';
 
 export default function AddList() {
   const [loading, setLoading] = useState(false);
