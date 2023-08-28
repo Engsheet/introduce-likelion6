@@ -125,6 +125,7 @@ export default function CharacterEdit() {
                 minLength={10}
                 maxLength={200}
                 defaultValue={formState.details}
+                onChange={handleDebounceChangeInput}
                 required
               ></textarea>
             </div>
