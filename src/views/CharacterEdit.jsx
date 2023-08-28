@@ -1,16 +1,16 @@
-import Spinner from "@/components/Spinner";
-import useDataDetails from "@/hooks/useDataDetails";
-import { useDelete } from "@/hooks/useDelete";
-import useUpdate from "@/hooks/useUpdate";
-import debounce from "@/utils/debounce";
-import { useEffect, useId, useState } from "react";
-import { Helmet } from "react-helmet-async";
-import { useNavigate, useParams } from "react-router-dom";
+import Spinner from '@/components/Spinner';
+import useDataDetails from '@/hooks/useDataDetails';
+import { useDelete } from '@/hooks/useDelete';
+import useUpdate from '@/hooks/useUpdate';
+import debounce from '@/utils/debounce';
+import { useEffect, useId, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const initialFormState = {
-  name: "",
-  nickname: "",
-  details: "",
+  name: '',
+  nickname: '',
+  details: '',
   // image: ""
 };
 
@@ -51,18 +51,18 @@ export default function CharacterEdit() {
     e.preventDefault();
 
     updateCharacter(dataId, formState)
-      .then(() => navigate("/introduce"))
+      .then(() => navigate(`/character/${data.id}`))
       .catch((error) => console.error(error));
   };
 
   const handleDeleteCharacter = () => {
-    const userConfirm = confirm("정말로 삭제하시겠어요?");
+    const userConfirm = confirm('정말로 삭제하시겠어요?');
 
     if (userConfirm) {
       deleteCharacter(dataId)
         .then((response) => {
           console.log(response);
-          navigate("/introduce");
+          navigate('/introduce');
         })
         .catch((error) => console.error(error));
     }
@@ -79,8 +79,19 @@ export default function CharacterEdit() {
           <title>Like Lion FE 6th - {formState.name}(Edit)</title>
         </Helmet>
         <div className="border p-10 border-gray-200 rounded-3xl text-xl">
-          <h2 className="text-3xl text-center mb-10">정보 수정 - {formState.name}</h2>
-          <form onSubmit={handleEditCharacter} className="flex flex-col gap-4" encType="multipart/form-data">
+          {/* <p className="absolute top-1/2 left-[38%] border-2 border-[#ffcc99] w-56"></p> */}
+          <div className="relative w-full h-24">
+            <h2 className="absolute -top-5 left-1/2 -translate-x-1/2 text-3xl mb-10 flex flex-col bg-white px-5">
+              정보 수정
+              <span className="text-xl block m-auto">{formState.name}</span>
+            </h2>
+            <p className="border-2 border-[#ffcc99] m-auto w-80"></p>
+          </div>
+          <form
+            onSubmit={handleEditCharacter}
+            className="flex flex-col gap-4"
+            encType="multipart/form-data"
+          >
             <div>
               <label htmlFor={nameId}>이름</label>
               <input
@@ -114,6 +125,7 @@ export default function CharacterEdit() {
                 minLength={10}
                 maxLength={200}
                 defaultValue={formState.details}
+                onChange={handleDebounceChangeInput}
                 required
               ></textarea>
             </div>
@@ -121,7 +133,11 @@ export default function CharacterEdit() {
               <button className="hover:font-semibold" type="submit">
                 수정
               </button>
-              <button className="hover:font-semibold" type="button" onClick={handleDeleteCharacter}>
+              <button
+                className="hover:font-semibold"
+                type="button"
+                onClick={handleDeleteCharacter}
+              >
                 삭제
               </button>
             </div>
